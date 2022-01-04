@@ -52,9 +52,11 @@ var gameConfig={
 /*====================================
 =            Game Status             =
 ====================================*/
-
+noseX = "";
+noseY = "";
+game_status = "";
 function game(){
-
+    console.log("noseX = " + noseX + "noseY = " + noseY);
   instializeInDraw();
   moveEnvironment(mario);
   drawSprites();
@@ -112,7 +114,11 @@ function game(){
   }
 }  
 
-
+ function startGame()
+{
+  game_status = "start";
+  document.getElementById("status").innerHTML = "Game is loading";
+}
 // change game status if any key is pressed
 function changeGameStatud(character){
   if((keyDown(control.up) ||keyDown(control.left)||keyDown(control.right) )&& gameConfig.status==="start") {
